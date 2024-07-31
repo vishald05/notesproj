@@ -4,10 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script>
+        function theme(a){
+            var col
+            if(a==1){
+                col="background-color:rgb(36, 37, 38);color:white;"
+            }else{
+                col="background-color: white;color:rgb(36, 37, 38);"
+            }
+            document.getElementById("th").style=col;
+        }
+    </script>
+    <style>
+        body {background-color: white;color: rgb(36, 37, 38);}
+    </style>
 </head>
-<body>
-    <h1>home page under working
-    </h1>
+<body id="th">
+    <h1>home page under working</h1>
+    <button type="button" onclick="theme(1)">Dark Theme</button>
+    <button type="button" onclick="theme(2)">Light Theme</button>
     
 </body>
 </html>
