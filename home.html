@@ -17,12 +17,32 @@
     </script>
     <style>
         body {background-color: white;color: rgb(36, 37, 38);}
+        .bar{
+            margin: 1%;
+        }
+        .bar h1 {
+            display: inline;
+            margin-left: 10%;
+        }
+        .bar #add:hover{
+            transition: .25s;
+            background-color: greenyellow;
+        }
     </style>
 </head>
 <body id="th">
     <h1>home page under working</h1>
     <button type="button" onclick="theme(1)">Dark Theme</button>
     <button type="button" onclick="theme(2)">Light Theme</button>
+
+    <div class="Box">
+        <div class="bar">
+            <h1>App Name</h1>
+            <h1>Settings</h1>
+            <h1 id="add" onclick="">ADD</h1>
+        </div>
+
+    </div>
     
 </body>
 </html>
