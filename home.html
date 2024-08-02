@@ -28,6 +28,14 @@
             transition: .25s;
             background-color: greenyellow;
         }
+
+        input{
+            width: 200px;
+            height: 200px;
+            border: none;
+            background-color: rgba(241,221,38,255);
+
+        }
     </style>
 </head>
 <body id="th">
@@ -41,11 +49,23 @@
             <h1>Settings</h1>
             <h1 id="add" onclick="">ADD</h1>
         </div>
+        <button style="padding: 2.5%; font-size: 200%;" onclick="create()"> ADD </button> <br>
+
+        <div id="main_seg">
+
+        </div>
 
     </div>
     
     <script>
-        
+        function create()
+        {
+            var note = document.createElement("input")
+            note.value = "Testing"
+            var mainseg = document.getElementById("main_seg")
+            mainseg.insertAdjacentElement("afterbegin" , note)
+        }
+
 
     </script>
 </body>
