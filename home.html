@@ -58,7 +58,52 @@
     </div>
     
     <script>
+        var enti = document.getElementById("main_seg")
         function create()
+        {
+            
+            var note = document.createElement("input")
+            note.id = "inppp"
+            var adbut = document.createElement("button")
+            adbut.textContent = "ADD WORK"
+            
+            enti.insertAdjacentElement("afterbegin",adbut)
+            enti.insertAdjacentElement("afterbegin",note)
+            
+            adbut.addEventListener("click",after_ad)
+            adbut.id = "adbutton"     
+        }
+
+        function after_ad()
+        {
+            var l1 = document.createElement("h1")
+            var note = document.getElementById("inppp")
+            var adbut = document.getElementById("adbutton")
+            l1.textContent = note.value
+            var buto = document.createElement("button")
+            buto.textContent = "X"
+            enti.append(l1)
+            enti.append(buto)
+            note.remove()
+            adbut.remove()
+
+        }
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        function creatjdkvsbe()
         {
             var note = document.createElement("input")
             note.value = "Testing"
