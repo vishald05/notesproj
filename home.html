@@ -23,8 +23,8 @@
         }
 
         input{
-            width: 200px;
-            height: 200px;
+            width: 150px;
+            height: 70px;
             border: none;
             background-color: rgba(241,221,38,255);
 
@@ -68,10 +68,13 @@
                 </ul>
             </li>
         </ul>
+        <button style="width: 70px;" onclick="create()">Add</button>
+        
     </div>
-        <div id="main_seg">
+    
+    <div id="main_seg">
 
-        </div>
+    </div>
 
     <script>
         var enti = document.getElementById("main_seg")
@@ -80,6 +83,7 @@
             
             var note = document.createElement("input")
             note.id = "inppp"
+            note.placeholder = "Type here..."
             var adbut = document.createElement("button")
             adbut.textContent = "ADD WORK"
             
@@ -102,7 +106,6 @@
             enti.append(buto)
             note.remove()
             adbut.remove()
-
         }
         
         
