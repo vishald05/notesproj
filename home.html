@@ -15,16 +15,9 @@
             document.getElementById("th").style=col;
         }
     </script>
+    
     <style>
-        body {background-color: white;color: rgb(36, 37, 38);}
-        .bar{
-            margin: 1%;
-        }
-        .bar h1 {
-            display: inline;
-            margin-left: 10%;
-        }
-        .bar #add:hover{
+         li:hover{
             transition: .25s;
             background-color: greenyellow;
         }
@@ -36,27 +29,50 @@
             background-color: rgba(241,221,38,255);
 
         }
+        .bar1 {display: flex;
+            justify-content: center;
+            margin-top: 100px;
+            list-style-type: none;
+        }
+         li{display: block;
+            width: 200px;
+            font-size: 25px;
+            background-color: black;
+            color: white;
+            padding: 10px 0px;
+            text-align: center;
+            text-decoration: none;}
+       
+        .theme1 {
+            display: none;
+            list-style-type: none;
+        }
+        .theme1 li:hover{
+            background-color: orange;
+        }
+        
+        .bar1 li:nth-child(3):hover .theme1{
+            display: inline;
+        }
     </style>
 </head>
 <body id="th">
-    <h1>home page under working</h1>
-    <button type="button" onclick="theme(1)">Dark Theme</button>
-    <button type="button" onclick="theme(2)">Light Theme</button>
-
     <div class="Box">
-        <div class="bar">
-            <h1>App Name</h1>
-            <h1>Settings</h1>
-            <h1 id="add" onclick="">ADD</h1>
-        </div>
-        <button style="padding: 2.5%; font-size: 200%;" onclick="create()"> ADD </button> <br>
-
+        <ul class="bar1">
+            <li>AppName</li>
+            <li id="add" onclick="create()">Add</li>
+            <li>Settings
+                <ul class="theme1">
+                    <li id="bu" type="button" onclick="theme(1)">Dark theme</li>
+                    <li id="bu" type="button" onclick="theme(2)">Light theme</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
         <div id="main_seg">
 
         </div>
 
-    </div>
-    
     <script>
         var enti = document.getElementById("main_seg")
         function create()
