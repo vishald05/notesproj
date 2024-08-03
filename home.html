@@ -19,7 +19,7 @@
     <style>
          li:hover{
             transition: .25s;
-            background-color: greenyellow;
+            background-color: rgba(241,221,38,255);
         }
 
         input{
@@ -54,6 +54,10 @@
         .bar1 li:nth-child(3):hover .theme1{
             display: inline;
         }
+        p{
+            display:inline-block ;
+            font-size: larger;
+        }
     </style>
 </head>
 <body id="th">
@@ -68,7 +72,6 @@
                 </ul>
             </li>
         </ul>
-        <button style="width: 70px;" onclick="create()">Add</button>
         
     </div>
     
@@ -95,17 +98,29 @@
         }
 
         function after_ad()
-        {
-            var l1 = document.createElement("h1")
+        {   
+            var subseg = document.createElement("div")
+            enti.append(subseg)
+            var l1 = document.createElement("p")
             var note = document.getElementById("inppp")
             var adbut = document.getElementById("adbutton")
             l1.textContent = note.value
             var buto = document.createElement("button")
             buto.textContent = "X"
-            enti.append(l1)
-            enti.append(buto)
+            subseg.append(l1)
+            subseg.append(buto)
             note.remove()
             adbut.remove()
+            buto.addEventListener("click", function(event) {
+                workcomplete(event);
+            });
+        }
+        
+        function workcomplete(event)
+        {
+            event.target.parentElement.remove()
+            
+
         }
         
         
