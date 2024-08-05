@@ -105,10 +105,13 @@
         function after_ad()
         {   
             if(enti.children.length == 2){
-                console.log(enti.children.length)
-                var incomphead = document.createElement("h1")
+                var incomphead = document.createElement("p")
                 incomphead.textContent = "Incomplete Tasks"
+                incomphead.style.fontSize="35px";
                 enti.insertAdjacentElement("afterbegin",incomphead)
+            }
+            if(enti.children.length == 1){
+                console.log(enti[0])
             }
             var subseg = document.createElement("div")
             enti.append(subseg)
@@ -118,6 +121,7 @@
             l1.textContent = note.value
             var buto = document.createElement("button")
             buto.textContent = "X"
+            buto.title = "Completed"
             subseg.append(l1)
             subseg.append(buto)
             note.remove()
@@ -132,8 +136,14 @@
             //event.target.parentElement.remove()
             if(complete.children.length == 0){
                 console.log("LOL")
-                var comphead = document.createElement("h1")
+                var comphead = document.createElement("p")
                 comphead.textContent = "Completed Tasks"
+                comphead.style.fontSize="35px";
+                var clear_completed = document.createElement("button")
+                clear_completed.textContent = "X"
+                clear_completed.title = "Clear All Completed"
+                clear_completed.addEventListener("click",clrcompleted)
+                complete.insertAdjacentElement("afterbegin",clear_completed)
                 complete.insertAdjacentElement("afterbegin",comphead)
             }
             var wor = event.target.parentElement
@@ -141,6 +151,12 @@
             complete.append(wor)
             wor.style.color="red"
 
+        }
+
+        //function to remove completed tasks
+        function clrcompleted()
+        {
+            complete.innerHTML = '';
         }
         
         
