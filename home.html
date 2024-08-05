@@ -78,9 +78,13 @@
     <div id="main_seg">
 
     </div>
+    <div id="main_seg_completed">
+
+    </div>
 
     <script>
         var enti = document.getElementById("main_seg")
+        var complete = document.getElementById("main_seg_completed")
         function create()
         {
             
@@ -94,11 +98,18 @@
             enti.insertAdjacentElement("afterbegin",note)
             
             adbut.addEventListener("click",after_ad)
-            adbut.id = "adbutton"     
+            adbut.id = "adbutton"  
+
         }
 
         function after_ad()
         {   
+            if(enti.children.length == 2){
+                console.log(enti.children.length)
+                var incomphead = document.createElement("h1")
+                incomphead.textContent = "Incomplete Tasks"
+                enti.insertAdjacentElement("afterbegin",incomphead)
+            }
             var subseg = document.createElement("div")
             enti.append(subseg)
             var l1 = document.createElement("p")
@@ -118,8 +129,17 @@
         
         function workcomplete(event)
         {
-            event.target.parentElement.remove()
-            
+            //event.target.parentElement.remove()
+            if(complete.children.length == 0){
+                console.log("LOL")
+                var comphead = document.createElement("h1")
+                comphead.textContent = "Completed Tasks"
+                complete.insertAdjacentElement("afterbegin",comphead)
+            }
+            var wor = event.target.parentElement
+            wor.remove()
+            complete.append(wor)
+            wor.style.color="red"
 
         }
         
